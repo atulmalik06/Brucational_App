@@ -25,7 +25,28 @@ import java.util.Properties;
 
 public class Register extends AppCompatActivity {
 
-    @Override
+    //@Override
+
+    private void sendEmail() {
+
+        final EditText etEmailR = (EditText) findViewById(R.id.etEmailR);
+        //Getting content for email
+        final String email = etEmailR.getText().toString().trim();
+        String subject = "Greetings from the CEO of THE BRUCATIONAL APP!";
+        String message = "Welcome! \n \nSo you have now successfully signed up to our Brucational App. " +
+                "All your data has been saved to our secure database and you can access your profile information via the " +
+                "My profile option in the settings page. " + "\nIf you encounter any problems whilst using the app, you can email us " +
+                "at appbrucational@gmail.com \n \n BRUCATIONAL APP";
+
+
+        //Creating SendMail object
+        SendMail sm = new SendMail(this, email, subject, message);
+
+        //Executing sendmail to send email
+        sm.execute();
+    }
+
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
@@ -85,8 +106,7 @@ public class Register extends AppCompatActivity {
                                     progressDialog.setMessage("Creating Account...");
                                     progressDialog.show();
 
-
-
+                                        sendEmail();
 
                                 /*
                                     // Recipient's email ID needs to be mentioned.
@@ -133,10 +153,6 @@ public class Register extends AppCompatActivity {
 
 
                     */
-
-
-
-
 
 
                                     Intent intent = new Intent(Register.this, Login.class);

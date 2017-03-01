@@ -65,7 +65,7 @@ public class Login extends AppCompatActivity {
                                 if (success) {
 
                                    // String name = jsonRespone.getString("name");
-                                   // etEmailL.setText(name);
+                                  //  etEmailL.setText(name);
 
                                     // Intent intent = new Intent(Login.this, Maps.class);
                                     //  Login.this.startActivity(intent);
