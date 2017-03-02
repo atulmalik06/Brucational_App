@@ -41,6 +41,8 @@
         <activity
             android:name=".MapsActivity"
             android:label="Map"></activity>
+        <activity android:name=".Ticgame"></activity>
+        <activity android:name=".Tictactoe"/>
 
     </application>
 
